@@ -1,0 +1,34 @@
+﻿@model CollegeRecord.Models.DesignationMaster
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>DesignationMaster</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="DesignId" />
+            <div class="form-group">
+                <label asp-for="DesignName" class="control-label"></label>
+                <input asp-for="DesignName" class="form-control" />
+                <span asp-validation-for="DesignName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <a class="btn btn-secondary" asp-action="Index">Back</a>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

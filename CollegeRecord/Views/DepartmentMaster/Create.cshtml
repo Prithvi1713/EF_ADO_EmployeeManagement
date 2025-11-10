@@ -1,0 +1,39 @@
+﻿@model CollegeRecord.Models.DepartmentMaster
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="card ">
+    <div class="card card-header d-flex align-items-center gap-3 mt-3 mb-3">
+        <h2> Create Department</h2>
+    </div>
+    <div class="card card-body ">
+        <div class="row">
+            <div class="col-md-4">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="DeptName" class="control-label"></label>
+                        <input asp-for="DeptName" class="form-control" />
+                        <span asp-validation-for="DeptName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group d-flex align-items-center gap-3 mt-3 mb-3">
+                        <input type="submit" value="Create" class="btn btn-primary mx-3" />
+                        <a class="btn btn-secondary mx-3" asp-action="Index">Back</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+  
+</div>
+
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
